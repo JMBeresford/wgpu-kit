@@ -1,5 +1,14 @@
 # web
 
+## 1.1.4
+
+### Patch Changes
+
+- [`cbadae6`](https://github.com/JMBeresford/wgpu-kit/commit/cbadae6770a716743c803b3e0c06cbb58fc2d727) Thanks [@JMBeresford](https://github.com/JMBeresford)! - refactor: move components into pipeline
+
+- Updated dependencies [[`cbadae6`](https://github.com/JMBeresford/wgpu-kit/commit/cbadae6770a716743c803b3e0c06cbb58fc2d727), [`9a131ee`](https://github.com/JMBeresford/wgpu-kit/commit/9a131eeabaefa7ead2bc0a60be593db76efd8f54), [`0ed3a50`](https://github.com/JMBeresford/wgpu-kit/commit/0ed3a50239fd1bf3e69aa863b145adf6e61b01bf)]:
+  - @wgpu-kit/core@1.0.4
+
 ## 1.1.3
 
 ### Patch Changes
