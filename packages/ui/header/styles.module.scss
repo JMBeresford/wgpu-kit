@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  padding: 1em 2em;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-template-columns: auto;
+  justify-items: end;
+  align-items: center;
+}
+
+.title {
+  font-size: 2em;
+  justify-self: start;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

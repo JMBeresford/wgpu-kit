@@ -10,7 +10,6 @@ import {
   VertexAttributeObject,
 } from "@wgpu-kit/core/src";
 import { mat4 } from "gl-matrix";
-import Stats from "stats.js";
 import { generateSphere } from "./sphere";
 import {
   shader,
@@ -18,7 +17,7 @@ import {
   computeShader,
   workGroupSize,
   workGroupCount,
-} from "./shader";
+} from "./shaders";
 
 export async function runExample(canvas: HTMLCanvasElement): Promise<void> {
   const sphere = generateSphere(0.075, 20, 20);
@@ -234,18 +233,8 @@ export async function runExample(canvas: HTMLCanvasElement): Promise<void> {
 
   await executor.addPipelineGroups(pipelineGroup);
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call -- stats.js is not typed
-  const stats = new Stats() as {
-    begin: () => void;
-    end: () => void;
-    dom: HTMLDivElement;
-  };
-
-  document.body.appendChild(stats.dom);
   async function render(): Promise<void> {
-    stats.begin();
     await executor.run();
-    stats.end();
 
     await new Promise(requestAnimationFrame);
     await render();

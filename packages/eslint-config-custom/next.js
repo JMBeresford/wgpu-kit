@@ -40,5 +40,7 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "import/no-default-export": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "react/no-unknown-property": "off",
   },
 };

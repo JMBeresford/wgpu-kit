@@ -1,0 +1,94 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10lvh 0;
+
+  h1 {
+    max-width: 30ch;
+    font-size: 4.25em;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+
+    background: rgb(221, 221, 221);
+    background: linear-gradient(
+      75deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(200, 200, 220, 1) 100%
+    );
+
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  p {
+    max-width: 50ch;
+    font-size: 1.25em;
+  }
+
+  .buttons {
+    filter: drop-shadow(0 0 0.5em rgb(0, 0, 0));
+  }
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+
+  transition: opacity 0.75s ease-in-out;
+}
+
+.why {
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    max-width: 60ch;
+    font-size: 1.2em;
+  }
+
+  aside {
+    border-radius: 8px;
+    padding: 1em 0;
+    color: #ddd;
+
+    h4 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      list-style: none;
+
+      &:first-of-type {
+        margin-bottom: 1em;
+      }
+
+      li {
+        margin-bottom: 0.25em;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

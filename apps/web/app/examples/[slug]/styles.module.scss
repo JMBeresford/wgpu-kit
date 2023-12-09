@@ -1,0 +1,164 @@
+.main {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  padding: 1.5em 0;
+  gap: 2em;
+  margin-bottom: 15lvh;
+}
+
+.info {
+  display: grid;
+  margin: 2em 0 1.5em;
+  grid-template-areas:
+    "back-btn       ."
+    "title          code-btn"
+    "description    code-btn";
+
+  .back {
+    grid-area: back-btn;
+    color: inherit;
+
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    grid-area: title;
+    font-size: 3em;
+    margin: 0.125em 0;
+    letter-spacing: -2px;
+  }
+
+  p {
+    grid-area: description;
+    margin: 0;
+    font-size: 1.125em;
+    opacity: 0.8;
+  }
+
+  .code-btn {
+    position: relative;
+    grid-area: code-btn;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    > :first-child {
+      position: absolute;
+    }
+
+    > :not(.show) {
+      opacity: 0;
+      pointer-events: none;
+      touch-action: none;
+      transition: opacity 0.2s;
+      transition-delay: 0;
+      transition-timing-function: ease-out;
+    }
+
+    > .show {
+      transition-delay: 0.2s;
+      transition-timing-function: ease-in;
+    }
+  }
+}
+
+$drop-shadow-color: rgba(255, 255, 255, 0.05);
+
+.content {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+
+  border-radius: 10px;
+  overflow: hidden;
+  // border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    -8px -8px 25px 0px $drop-shadow-color,
+    8px 8px 25px 0px $drop-shadow-color,
+    -8px 8px 25px 0px $drop-shadow-color,
+    8px -8px 25px 0px $drop-shadow-color;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .source {
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(40px);
+    overflow-y: auto;
+  }
+}
+
+.code-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "tabs"
+    "code";
+
+  &:not(.show) {
+    opacity: 0;
+    pointer-events: none;
+    touch-action: none;
+  }
+
+  transition: opacity 0.2s ease-in-out;
+
+  .tabs {
+    background-color: #131313;
+    grid-area: tabs;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+
+    button {
+      opacity: 0.25;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .source-text {
+    grid-area: code;
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.2s;
+
+    &:not(.show) {
+      opacity: 0;
+      pointer-events: none;
+      touch-action: none;
+
+      transition-delay: 0s;
+      transition-timing-function: ease-in;
+    }
+
+    &.show {
+      transition-delay: 0.2s;
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+  touch-action: auto;
+}

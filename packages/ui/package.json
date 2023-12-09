@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "generate:component": "turbo gen react-component"
   },
+  "peerDependencies": {
+    "sass": "^1.69.5"
+  },
   "devDependencies": {
     "@turbo/gen": "^1.10.12",
     "@types/node": "^20.5.2",

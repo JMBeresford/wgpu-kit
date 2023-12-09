@@ -1,0 +1,41 @@
+.main {
+  h1 {
+    margin: 1em 0;
+    font-size: 4em;
+  }
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15lvh;
+  gap: 1em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  hr {
+    margin: 1em 0;
+    opacity: 0.2;
+  }
+}
+
+.example {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+
+  filter: brightness(0.8);
+  transition: filter 0.2s ease-in-out;
+
+  h2 {
+    margin: 0;
+    font-size: 2em;
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}

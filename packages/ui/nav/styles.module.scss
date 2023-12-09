@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+
+  font-size: 1em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+}
